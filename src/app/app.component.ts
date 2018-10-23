@@ -19,7 +19,7 @@ export class AppComponent {
     new Task('Add README file to last few Angular repos on GitHub',1)
   ];
 
-  selectedTask: Task = this.tasks[0];
+  selectedTask: Task = null;
 
   editTask(clickedTask){
     this.selectedTask = clickedTask;
@@ -38,6 +38,10 @@ export class AppComponent {
     else{
       return "bg-info";
     }
+  }
+
+  finishedEditing() {
+    this.selectedTask = null;
   }
 }
 
